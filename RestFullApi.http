@@ -1,0 +1,10 @@
+@RestFullApi_HostAddress = https://localhost:7258
+
+GET {{RestFullApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{RestFullApi_HostAddress}}/api/VillaAPI
+
+###
