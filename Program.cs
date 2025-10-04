@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.OpenApi;
+using Microsoft.EntityFrameworkCore;
+using RestFullApi.Data;
+
 //using Serilog;
 using RestFullApi.Logging;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<ApplicationDbContext>(
+     option =>
+     {
+         option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
+     });
 
 ////Adding serilog
 ////  Call CreateLogger() to get an ILogger instance
